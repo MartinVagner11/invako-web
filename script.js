@@ -37,7 +37,7 @@ document.getElementById('contactForm')?.addEventListener('submit', e => {
     '',
     f.get('zprava'),
   ].join('\n');
-  location.href = `mailto:info@invako.cz?subject=${encodeURIComponent('Poptávka z webu')}&body=${encodeURIComponent(body)}`;
+  location.href = `mailto:martinvagner1108@gmail.com?subject=${encodeURIComponent('Poptávka z webu')}&body=${encodeURIComponent(body)}`;
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
