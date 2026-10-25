@@ -24,20 +24,55 @@ const io = new IntersectionObserver(entries => {
 }, { threshold: 0.12 });
 revealEls.forEach(el => io.observe(el));
 
-// Contact form -> opens mail client (replace with a real backend/form service when going live)
-document.getElementById('contactForm')?.addEventListener('submit', e => {
+// Contact form
+// FORM_ENDPOINT = URL of the deployed Google Apps Script web app (poptavka-apps-script.gs).
+// While it's empty, the form falls back to opening the visitor's mail client.
+const FORM_ENDPOINT = '';
+const FALLBACK_EMAIL = 'martinvagner1108@gmail.com';
+
+const form = document.getElementById('contactForm');
+const statusEl = document.getElementById('formStatus');
+
+function showStatus(type, text) {
+  statusEl.hidden = false;
+  statusEl.className = `form__status form__status--${type}`;
+  statusEl.textContent = text;
+}
+
+form?.addEventListener('submit', async e => {
   e.preventDefault();
-  const f = new FormData(e.target);
-  const body = [
-    `Jméno: ${f.get('jmeno')}`,
-    `Firma: ${f.get('firma') || '-'}`,
-    `E-mail: ${f.get('email')}`,
-    `Telefon: ${f.get('telefon') || '-'}`,
-    `Zájem o náhradní plnění: ${f.get('nahradni') ? 'ano' : 'ne'}`,
-    '',
-    f.get('zprava'),
-  ].join('\n');
-  location.href = `mailto:martinvagner1108@gmail.com?subject=${encodeURIComponent('Poptávka z webu')}&body=${encodeURIComponent(body)}`;
+  const f = new FormData(form);
+
+  if (!FORM_ENDPOINT) {
+    const body = [
+      `Jméno: ${f.get('jmeno')}`,
+      `Firma: ${f.get('firma') || '-'}`,
+      `E-mail: ${f.get('email')}`,
+      `Telefon: ${f.get('telefon') || '-'}`,
+      `Zájem o náhradní plnění: ${f.get('nahradni') ? 'ano' : 'ne'}`,
+      '',
+      f.get('zprava'),
+    ].join('\n');
+    location.href = `mailto:${FALLBACK_EMAIL}?subject=${encodeURIComponent('Poptávka z webu')}&body=${encodeURIComponent(body)}`;
+    return;
+  }
+
+  const button = form.querySelector('button[type=submit]');
+  button.disabled = true;
+  button.textContent = 'Odesílám…';
+  statusEl.hidden = true;
+  try {
+    const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: new URLSearchParams(f) });
+    const data = await res.json();
+    if (!data.ok) throw new Error(data.error);
+    form.reset();
+    showStatus('ok', 'Děkujeme! Poptávka byla odeslána, ozveme se vám do 48 hodin.');
+  } catch {
+    showStatus('error', `Odeslání se nepodařilo. Zkuste to prosím znovu nebo nám napište na ${FALLBACK_EMAIL}.`);
+  } finally {
+    button.disabled = false;
+    button.textContent = 'Odeslat poptávku';
+  }
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();

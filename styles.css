@@ -194,6 +194,11 @@ p { margin: 0 0 1em; }
 .form__check input { width: 18px; height: 18px; accent-color: var(--red); }
 .form .btn { justify-self: start; }
 .form__note { margin: 0; font-size: .8rem; color: var(--muted); }
+.form .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.form__status { margin: 0; padding: 12px 14px; border-radius: 6px; font-weight: 500; font-size: .95rem; }
+.form__status--ok { background: #e7f6ec; color: #17653a; }
+.form__status--error { background: #fdeaea; color: #a3171a; }
+.form .btn:disabled { opacity: .7; cursor: wait; transform: none; }
 
 /* Page header (subpages) */
 .page-hero { background: var(--light); border-bottom: 1px solid var(--line); padding: 64px 0 56px; }

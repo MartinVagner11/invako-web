@@ -114,8 +114,11 @@
           </div>
           <label>Popis zakázky<textarea name="zprava" rows="5" required placeholder="Materiál, rozměry, počet kusů, termín…"></textarea></label>
           <label class="form__check"><input type="checkbox" name="nahradni"> Mám zájem o náhradní plnění</label>
+          <!-- past na spamboty, skryté pole -->
+          <label class="form__hp" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
           <button class="btn btn--red" type="submit">Odeslat poptávku</button>
-          <p class="form__note">Formulář otevře váš e-mailový program s předvyplněnou zprávou.</p>
+          <p class="form__status" id="formStatus" role="status" aria-live="polite" hidden></p>
+          <p class="form__note">Odesláním souhlasíte se zpracováním údajů za účelem vyřízení poptávky.</p>
         </form>
       </div>
     </section>
