@@ -27,7 +27,7 @@ revealEls.forEach(el => io.observe(el));
 // Contact form
 // FORM_ENDPOINT = URL of the deployed Google Apps Script web app (poptavka-apps-script.gs).
 // While it's empty, the form falls back to opening the visitor's mail client.
-const FORM_ENDPOINT = '';
+const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbxh3Wweq4yudQHTZxFYpLXS7BLw14WR5nJF6AGfUhuIVGGEn60BK_pTtWiTOKondyCA/exec';
 const FALLBACK_EMAIL = 'martinvagner1108@gmail.com';
 
 const form = document.getElementById('contactForm');
