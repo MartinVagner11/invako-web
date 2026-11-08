@@ -127,7 +127,7 @@ p { margin: 0 0 1em; }
 .back-link:hover { color: var(--red); }
 .service-text h2 { font-size: 1.4rem; margin: 32px 0 14px; }
 .service-text .tags { margin: 0; }
-.service-text .checks--dark { margin-top: 0; }
+.service-list { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; color: var(--navy); font-weight: 500; }
 .service-text .tags li { background: var(--light); }
 .service-text .service-text__title { margin-top: 0; }
 .service-text__lead { font-size: 1.15rem; color: var(--ink) !important; }
