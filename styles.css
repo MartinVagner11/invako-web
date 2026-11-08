@@ -159,8 +159,8 @@ p { margin: 0 0 1em; }
 .specs dt { font-size: .8rem; color: var(--muted); }
 .specs dd { margin: 0; font-weight: 700; color: var(--navy); }
 
-.benefit { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-left: 4px solid var(--red); border-radius: var(--radius); padding: 26px; margin: 28px 0; }
-.benefit p { color: #c9cce0; margin: 0; }
+.benefit { background: var(--light); border: 1px solid var(--line); border-left: 4px solid var(--red); border-radius: var(--radius); padding: 26px; margin: 28px 0; }
+.benefit p { color: var(--muted); margin: 0; }
 
 .checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
 .checks li { position: relative; padding-left: 30px; }
@@ -185,35 +185,35 @@ p { margin: 0 0 1em; }
 .contact__info .contact__list { margin: 0; grid-template-columns: 1fr 1fr; grid-auto-flow: row dense; column-gap: 32px; align-content: start; }
 .contact__info .contact__list li:nth-child(-n+2) { grid-column: 1; }
 .contact__info .contact__list li:nth-child(n+3) { grid-column: 2; }
-.contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; margin-top: 96px; padding-top: 72px; border-top: 1px solid rgba(255,255,255,.12); }
-.contact__intro > p { color: #c9cce0; }
+.contact { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; margin-top: 96px; padding-top: 72px; border-top: 1px solid var(--line); }
+.contact__intro > p { color: var(--muted); }
 .contact__list { list-style: none; padding: 0; margin: 28px 0 0; display: grid; gap: 14px; }
-.contact__list li { display: grid; grid-template-columns: 90px 1fr; color: var(--white); }
-.contact__list span { color: #9a9fc0; font-size: .9rem; }
+.contact__list li { display: grid; grid-template-columns: 90px 1fr; color: var(--navy); }
+.contact__list span { color: var(--muted); font-size: .9rem; }
 .contact__list a { text-decoration: none; font-weight: 700; }
-.contact__list a:hover { color: #ff6b6d; }
+.contact__list a:hover { color: var(--red); }
 
 .maps { margin-top: 32px; }
-.maps__label { color: #9a9fc0; font-size: .9rem; margin-bottom: 10px; }
+.maps__label { color: var(--muted); font-size: .9rem; margin-bottom: 10px; }
 .maps__buttons { display: flex; flex-wrap: wrap; gap: 10px; }
 .maps__btn {
   display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; border-radius: 6px;
-  border: 1px solid rgba(255,255,255,.25); color: var(--white); text-decoration: none; font-weight: 700; font-size: .95rem;
+  border: 1px solid var(--line); background: var(--white); color: var(--navy); text-decoration: none; font-weight: 700; font-size: .95rem;
   transition: background .2s, border-color .2s, color .2s;
 }
 .maps__btn svg { width: 18px; height: 18px; color: var(--red); transition: color .2s; }
-.maps__btn:hover { background: var(--white); border-color: var(--white); color: var(--navy); }
+.maps__btn:hover { background: var(--navy); border-color: var(--navy); color: var(--white); }
 
 .streetview { margin-top: 72px; }
 .streetview__head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
 .streetview__head h3 { margin: 0; font-size: 1.4rem; }
-.streetview__head a { color: #c9cce0; text-decoration: none; font-weight: 700; font-size: .95rem; }
-.streetview__head a:hover { color: var(--white); }
-.streetview__frame { aspect-ratio: 16 / 7; border-radius: var(--radius); overflow: hidden; background: var(--navy-dark); box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+.streetview__head a { color: var(--navy); text-decoration: none; font-weight: 700; font-size: .95rem; }
+.streetview__head a:hover { color: var(--red); }
+.streetview__frame { aspect-ratio: 16 / 7; border-radius: var(--radius); overflow: hidden; background: var(--navy-dark); box-shadow: var(--shadow); border: 1px solid var(--line); }
 .streetview__frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 @media (max-width: 860px) { .streetview__frame { aspect-ratio: 4 / 3; } .streetview { margin-top: 56px; } }
 
-.form { background: var(--white); color: var(--ink); border-radius: var(--radius); padding: 32px; display: grid; gap: 16px; box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+.form { background: var(--white); color: var(--ink); border-radius: var(--radius); padding: 32px; display: grid; gap: 16px; box-shadow: var(--shadow); border: 1px solid var(--line); }
 .form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form label { display: grid; gap: 6px; font-size: .9rem; font-weight: 500; color: var(--navy); }
 .form input:not([type=checkbox]), .form textarea {
