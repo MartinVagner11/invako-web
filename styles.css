@@ -125,6 +125,12 @@ p { margin: 0 0 1em; }
 .card__more { margin-top: auto; font-weight: 700; color: var(--red); }
 .back-link { font-weight: 700; color: var(--navy); text-decoration: none; }
 .back-link:hover { color: var(--red); }
+.service-text h2 { font-size: 1.4rem; margin: 32px 0 14px; }
+.service-text .tags { margin: 0; }
+.service-text .checks--dark { margin-top: 0; }
+.service-text .tags li { background: var(--light); }
+.service-text__lead { font-size: 1.15rem; color: var(--ink) !important; }
+.service-text .back-link { display: inline-block; margin-top: 36px; }
 
 /* Split layout */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
@@ -142,6 +148,11 @@ p { margin: 0 0 1em; }
 
 .benefit { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); border-left: 4px solid var(--red); border-radius: var(--radius); padding: 26px; margin: 28px 0; }
 .benefit p { color: #c9cce0; margin: 0; }
+
+.checks { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+.checks li { position: relative; padding-left: 30px; }
+.checks li::before { content: ""; position: absolute; left: 0; top: .3em; width: 18px; height: 18px; border-radius: 50%; background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / 11px no-repeat; }
+.checks--dark { margin-top: 24px; color: var(--navy); font-weight: 500; }
 
 /* Steps */
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
