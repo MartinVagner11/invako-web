@@ -7,7 +7,6 @@ sluzba-frezovani.jpg     services – CNC milling, 800×600
 sluzba-gravirovani.jpg   services – engraving and labels
 sluzba-rezani.jpg        services – sheet cutting
 sluzba-zakazkova.jpg     services – custom production
-technologie.jpg          machine / workshop, roughly 1000×1000
 chranena-dilna.jpg       team / workplace
 o-nas.jpg                about us
 kontakt.jpg              home page tile for Kontakt (e.g. building / entrance)
