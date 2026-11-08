@@ -321,7 +321,9 @@ p { margin: 0 0 1em; }
   .topbar__badge { display: none; }
   .topbar { font-size: .78rem; }
   .topbar__inner { flex-wrap: nowrap; gap: 10px; }
-  .topbar__contacts { margin-left: 0; gap: 12px; flex-wrap: nowrap; white-space: nowrap; min-width: 0; }
+  .topbar__contacts { margin-left: 0; gap: 12px; flex-wrap: nowrap; white-space: nowrap; min-width: 0; flex: 1 1 auto; overflow: hidden; }
+  .topbar__contacts a { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  .topbar__contacts a:first-child { flex: none; }
   .lang { margin-left: auto; padding-left: 0; border-left: 0; flex: none; }
   .lang summary { font-size: 0; gap: 4px; padding: 2px; }
   .cards, .steps, .gallery { grid-template-columns: 1fr; }
