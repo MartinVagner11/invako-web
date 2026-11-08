@@ -129,6 +129,7 @@ p { margin: 0 0 1em; }
 .service-text .tags { margin: 0; }
 .service-text .checks--dark { margin-top: 0; }
 .service-text .tags li { background: var(--light); }
+.service-text .service-text__title { font-size: clamp(1.6rem, 3vw, 2.2rem); margin: 0 0 16px; }
 .service-text__lead { font-size: 1.15rem; color: var(--ink) !important; }
 .service-text .back-link { display: inline-block; margin-top: 36px; }
 
