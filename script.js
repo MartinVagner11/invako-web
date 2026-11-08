@@ -10,6 +10,13 @@ nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
   toggle.setAttribute('aria-expanded', 'false');
 }));
 
+// Language dropdown: close on outside click or Escape
+const langMenu = document.querySelector('.lang');
+if (langMenu) {
+  document.addEventListener('click', e => { if (!langMenu.contains(e.target)) langMenu.open = false; });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') langMenu.open = false; });
+}
+
 // Header shadow on scroll
 const header = document.querySelector('.header');
 addEventListener('scroll', () => header.classList.toggle('is-scrolled', scrollY > 10), { passive: true });

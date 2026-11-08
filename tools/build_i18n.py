@@ -24,23 +24,33 @@ KEEP = {
     'Google Maps', 'Apple Maps', 'Waze', '+420 775 565 671', 'franzova.hana@invako.cz',
     'Podnásepní 450/1a', 'Trnitá, 602 00 Brno', '01783564', 'CZ01783564',
     'Street View – Podnásepní 450/1a, Brno', 'CZ', 'EN', 'DE', 'PL',
+    'Čeština', 'English', 'Deutsch', 'Polski',
 }
 
-SWITCH_LABELS = [('cs', 'CZ'), ('en', 'EN'), ('de', 'DE'), ('pl', 'PL')]
-SWITCH_RE = re.compile(r'\n? *<nav class="lang".*?</nav>', re.S)
+# code, short label, flag file, language name in that language
+SWITCH_LANGS = [
+    ('cs', 'CZ', 'cz', 'Čeština'),
+    ('en', 'EN', 'gb', 'English'),
+    ('de', 'DE', 'de', 'Deutsch'),
+    ('pl', 'PL', 'pl', 'Polski'),
+]
+SWITCH_RE = re.compile(r'\n? *<(nav|details) class="lang".*?</\1>', re.S)
 
 
 def switcher(page, current):
-    """Language links for one page; `current` is the language of the page being written."""
+    """Language dropdown for one page; `current` is the language of the page being written."""
     prefix = '' if current == 'cs' else '../'
-    links = []
-    for code, label in SWITCH_LABELS:
+    cur = next(l for l in SWITCH_LANGS if l[0] == current)
+    items = []
+    for code, label, flag, name in SWITCH_LANGS:
         href = prefix + (page if code == 'cs' else f'{code}/{page}')
-        if code == current:
-            links.append(f'<a href="{href}" lang="{code}" aria-current="true">{label}</a>')
-        else:
-            links.append(f'<a href="{href}" lang="{code}" hreflang="{code}">{label}</a>')
-    return '\n      <nav class="lang" aria-label="Jazyk">' + ''.join(links) + '</nav>'
+        attrs = ' aria-current="true"' if code == current else f' hreflang="{code}"'
+        items.append(f'\n          <li><a href="{href}" lang="{code}"{attrs}>'
+                     f'<img src="images/flags/{flag}.svg" alt="" width="20" height="14">{name}</a></li>')
+    return ('\n      <details class="lang">'
+            f'\n        <summary aria-label="Jazyk"><img src="images/flags/{cur[2]}.svg" alt="" width="20" height="14">{cur[1]}</summary>'
+            '\n        <ul class="lang__menu">' + ''.join(items) + '\n        </ul>'
+            '\n      </details>')
 
 
 def with_switcher(html, page, current):
