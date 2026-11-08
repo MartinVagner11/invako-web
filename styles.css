@@ -325,6 +325,7 @@ p { margin: 0 0 1em; }
   .page-hero { padding: 44px 0 40px; }
   .specs, .form__row, .contact__info .contact__list { grid-template-columns: 1fr; }
   .contact__info .contact__list li { grid-column: auto !important; }
+  .maps__buttons { justify-content: center; }
   .form { padding: 22px; }
   .stat__num { font-size: 1.5rem; }
   .hero__lead { font-size: 1.05rem; }
