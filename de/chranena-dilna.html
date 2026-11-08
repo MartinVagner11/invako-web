@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Geschützte Werkstatt | INVAKO</title>
+  <meta name="description" content="INVAKO ist eine geschützte Werkstatt – Einkäufe bei uns werden auf die tschechische Beschäftigungsquote angerechnet.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+
+  <!-- HORNÍ LIŠTA -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__badge">Geschützte Werkstatt · Ersatzerfüllung</span>
+      <div class="topbar__contacts">
+        <a href="tel:+420775565671">+420 775 565 671</a>
+        <a href="mailto:franzova.hana@invako.cz">franzova.hana@invako.cz</a>
+      </div>
+      <nav class="lang" aria-label="Sprache"><a href="../chranena-dilna.html" lang="cs" hreflang="cs">CZ</a><a href="../en/chranena-dilna.html" lang="en" hreflang="en">EN</a><a href="../de/chranena-dilna.html" lang="de" aria-current="true">DE</a><a href="../pl/chranena-dilna.html" lang="pl" hreflang="pl">PL</a></nav>
+    </div>
+  </div>
+
+  <!-- HLAVIČKA -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Startseite">
+        <!-- LOGO: images/logo.jpg -->
+        <img src="../images/logo.jpg" alt="INVAKO" class="logo__img" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo__text" hidden><strong>INVAKO</strong></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Hauptnavigation">
+        <a href="sluzby.html">Leistungen</a>
+        <a href="realizace.html">Referenzen</a>
+        <a href="chranena-dilna.html" aria-current="page">Geschützte Werkstatt</a>
+        <a href="o-nas.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="kontakt.html#poptavka" class="btn btn--red btn--sm">Anfrage</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü öffnen" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ZÁHLAVÍ STRÁNKY -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Startseite</a> / <span>Geschützte Werkstatt</span></p>
+        <h1>Geschützte Werkstatt</h1>
+        <p class="page-hero__lead">Wir beschäftigen Menschen mit Behinderung – und tschechische Unternehmen erfüllen mit uns ihre Beschäftigungsquote.</p>
+      </div>
+    </section>
+
+    <section class="section section--navy" id="chranena-dilna">
+      <div class="container split split--reverse">
+        <div class="split__media img-slot" style="--img:url('../images/chranena-dilna.jpg')"></div>
+        <div class="split__text">
+          <h2>Qualitätsfertigung, die hilft</h2>
+          <p>INVAKO ist eine geschützte Werkstatt – wir beschäftigen Menschen mit Behinderung und geben ihnen sinnvolle Arbeit in einem technischen Bereich.</p>
+          <p>Bei der Qualität machen wir keine Abstriche: Wir arbeiten auf modernen CNC-Maschinen und jedes Teil durchläuft vor dem Versand eine Endkontrolle.</p>
+          <div class="benefit">
+            <h3>Beschäftigungsquote durch Ersatzerfüllung erfüllen</h3>
+            <p>Nach tschechischem Recht müssen Unternehmen mit mehr als 25 Beschäftigten 4 % Menschen mit Behinderung beschäftigen. Mit dem Kauf unserer Produkte und Leistungen erfüllen Sie diese Pflicht in Form der <strong>Ersatzerfüllung</strong> – und statt einer Abgabe an den Staat erhalten Sie Teile, die Sie wirklich brauchen.</p>
+          </div>
+          <a href="kontakt.html#poptavka" class="btn btn--red">Ich interessiere mich für die Ersatzerfüllung</a>
+        </div>
+      </div>
+    </section>
+    <!-- VÝZVA -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Haben Sie einen Auftrag? Melden Sie sich.</h2>
+          <p>Senden Sie uns eine Zeichnung oder Beschreibung – innerhalb von 48 Stunden erhalten Sie ein Angebot.</p>
+        </div>
+        <a href="kontakt.html#poptavka" class="btn btn--white">Unverbindliche Anfrage</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> INVAKO · CNC-Bearbeitung · Geschützte Werkstatt</p>
+      <nav class="footer__nav" aria-label="Fußzeile">
+        <a href="sluzby.html">Leistungen</a>
+        <a href="realizace.html">Referenzen</a>
+        <a href="chranena-dilna.html">Geschützte Werkstatt</a>
+        <a href="o-nas.html">Über uns</a>
+        <a href="kontakt.html">Kontakt</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

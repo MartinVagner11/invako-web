@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services | INVAKO</title>
+  <meta name="description" content="CNC milling, laser cutting and marking, acrylic bending and bonding, assembly – INVAKO Brno.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+
+  <!-- HORNÍ LIŠTA -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__badge">Sheltered workshop · substitute fulfilment</span>
+      <div class="topbar__contacts">
+        <a href="tel:+420775565671">+420 775 565 671</a>
+        <a href="mailto:franzova.hana@invako.cz">franzova.hana@invako.cz</a>
+      </div>
+      <nav class="lang" aria-label="Language"><a href="../sluzby.html" lang="cs" hreflang="cs">CZ</a><a href="../en/sluzby.html" lang="en" aria-current="true">EN</a><a href="../de/sluzby.html" lang="de" hreflang="de">DE</a><a href="../pl/sluzby.html" lang="pl" hreflang="pl">PL</a></nav>
+    </div>
+  </div>
+
+  <!-- HLAVIČKA -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Home">
+        <!-- LOGO: images/logo.jpg -->
+        <img src="../images/logo.jpg" alt="INVAKO" class="logo__img" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo__text" hidden><strong>INVAKO</strong></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="sluzby.html" aria-current="page">Services</a>
+        <a href="realizace.html">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html">About us</a>
+        <a href="kontakt.html">Contact</a>
+        <a href="kontakt.html#poptavka" class="btn btn--red btn--sm">Request a quote</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ZÁHLAVÍ STRÁNKY -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / <span>Services</span></p>
+        <h1>Services</h1>
+        <p class="page-hero__lead">From prototypes to repeat series. We work from your drawing, 3D model or just a sketch – and we are happy to help with the technical preparation.</p>
+      </div>
+    </section>
+
+    <section class="section" id="sluzby">
+      <div class="container">
+        <div class="cards">
+          <a class="card card--link" href="sluzba-frezovani.html">
+            <div class="card__img img-slot" style="--img:url('../images/sluzba-frezovani.jpg')"></div>
+            <div class="card__body">
+              <h3>CNC milling</h3>
+              <span class="card__more">More →</span>
+            </div>
+          </a>
+          <a class="card card--link" href="sluzba-laser.html">
+            <div class="card__img img-slot" style="--img:url('../images/sluzba-laser.jpg')"></div>
+            <div class="card__body">
+              <h3>Laser cutting and marking</h3>
+              <span class="card__more">More →</span>
+            </div>
+          </a>
+          <a class="card card--link" href="sluzba-ohybani-plexi.html">
+            <div class="card__img img-slot" style="--img:url('../images/sluzba-ohybani-plexi.jpg')"></div>
+            <div class="card__body">
+              <h3>Acrylic bending and bonding</h3>
+              <span class="card__more">More →</span>
+            </div>
+          </a>
+          <a class="card card--link" href="sluzba-kompletace.html">
+            <div class="card__img img-slot" style="--img:url('../images/sluzba-kompletace.jpg')"></div>
+            <div class="card__body">
+              <h3>Assembly</h3>
+              <span class="card__more">More →</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--light">
+      <div class="container">
+        <header class="section__head">
+          <p class="eyebrow">How it works</p>
+          <h2>From request to finished part</h2>
+        </header>
+        <ol class="steps">
+          <li><span class="steps__n">01</span><h3>Request a quote</h3><p>Send us a drawing, model or description of what you need.</p></li>
+          <li><span class="steps__n">02</span><h3>Quote</h3><p>Within 48 hours you will receive a price quote and delivery date.</p></li>
+          <li><span class="steps__n">03</span><h3>Production</h3><p>We prepare the data, manufacture and inspect every piece.</p></li>
+          <li><span class="steps__n">04</span><h3>Delivery</h3><p>We carefully pack the finished parts and deliver them or have them ready for collection.</p></li>
+        </ol>
+      </div>
+    </section>
+    <!-- VÝZVA -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Have an order? Get in touch.</h2>
+          <p>Send us a drawing or a description and you will get a quote within 48 hours.</p>
+        </div>
+        <a href="kontakt.html#poptavka" class="btn btn--white">Request a free quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> INVAKO · CNC machining · Sheltered workshop</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="sluzby.html">Services</a>
+        <a href="realizace.html">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html">About us</a>
+        <a href="kontakt.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects | INVAKO</title>
+  <meta name="description" content="INVAKO products and orders – labels, milled parts, panels and signs.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+
+  <!-- HORNÍ LIŠTA -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__badge">Sheltered workshop · substitute fulfilment</span>
+      <div class="topbar__contacts">
+        <a href="tel:+420775565671">+420 775 565 671</a>
+        <a href="mailto:franzova.hana@invako.cz">franzova.hana@invako.cz</a>
+      </div>
+      <nav class="lang" aria-label="Language"><a href="../realizace.html" lang="cs" hreflang="cs">CZ</a><a href="../en/realizace.html" lang="en" aria-current="true">EN</a><a href="../de/realizace.html" lang="de" hreflang="de">DE</a><a href="../pl/realizace.html" lang="pl" hreflang="pl">PL</a></nav>
+    </div>
+  </div>
+
+  <!-- HLAVIČKA -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Home">
+        <!-- LOGO: images/logo.jpg -->
+        <img src="../images/logo.jpg" alt="INVAKO" class="logo__img" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo__text" hidden><strong>INVAKO</strong></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="sluzby.html">Services</a>
+        <a href="realizace.html" aria-current="page">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html">About us</a>
+        <a href="kontakt.html">Contact</a>
+        <a href="kontakt.html#poptavka" class="btn btn--red btn--sm">Request a quote</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ZÁHLAVÍ STRÁNKY -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / <span>Projects</span></p>
+        <h1>Projects</h1>
+        <p class="page-hero__lead">Examples of our work – from milled parts and laser-cut and laser-marked products to acrylic products.</p>
+      </div>
+    </section>
+
+    <section class="section" id="realizace">
+      <div class="container">
+        <!-- OBRÁZKY: images/realizace-1.jpg až realizace-6.jpg -->
+        <div class="gallery">
+          <figure class="img-slot" style="--img:url('../images/realizace-1.jpg')"><figcaption>Laser-marked labels</figcaption></figure>
+          <figure class="img-slot" style="--img:url('../images/realizace-2.jpg')"><figcaption>Milled POM parts</figcaption></figure>
+          <figure class="img-slot" style="--img:url('../images/realizace-3.jpg')"><figcaption>Aluminium front panel</figcaption></figure>
+          <figure class="img-slot" style="--img:url('../images/realizace-4.jpg')"><figcaption>Plexiglass products</figcaption></figure>
+          <figure class="img-slot" style="--img:url('../images/realizace-5.jpg')"><figcaption>Wayfinding signs</figcaption></figure>
+          <figure class="img-slot" style="--img:url('../images/realizace-6.jpg')"><figcaption>Jig prototype</figcaption></figure>
+        </div>
+      </div>
+    </section>
+    <!-- VÝZVA -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Have an order? Get in touch.</h2>
+          <p>Send us a drawing or a description and you will get a quote within 48 hours.</p>
+        </div>
+        <a href="kontakt.html#poptavka" class="btn btn--white">Request a free quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> INVAKO · CNC machining · Sheltered workshop</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="sluzby.html">Services</a>
+        <a href="realizace.html">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html">About us</a>
+        <a href="kontakt.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

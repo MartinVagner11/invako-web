@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>About us | INVAKO</title>
+  <meta name="description" content="INVAKO – a small Brno company with great care. CNC manufacturing and sheltered workshop.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+</head>
+<body>
+
+  <!-- HORNÍ LIŠTA -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <span class="topbar__badge">Sheltered workshop · substitute fulfilment</span>
+      <div class="topbar__contacts">
+        <a href="tel:+420775565671">+420 775 565 671</a>
+        <a href="mailto:franzova.hana@invako.cz">franzova.hana@invako.cz</a>
+      </div>
+      <nav class="lang" aria-label="Language"><a href="../o-nas.html" lang="cs" hreflang="cs">CZ</a><a href="../en/o-nas.html" lang="en" aria-current="true">EN</a><a href="../de/o-nas.html" lang="de" hreflang="de">DE</a><a href="../pl/o-nas.html" lang="pl" hreflang="pl">PL</a></nav>
+    </div>
+  </div>
+
+  <!-- HLAVIČKA -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="index.html" class="logo" aria-label="Home">
+        <!-- LOGO: images/logo.jpg -->
+        <img src="../images/logo.jpg" alt="INVAKO" class="logo__img" onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+        <span class="logo__text" hidden><strong>INVAKO</strong></span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        <a href="sluzby.html">Services</a>
+        <a href="realizace.html">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html" aria-current="page">About us</a>
+        <a href="kontakt.html">Contact</a>
+        <a href="kontakt.html#poptavka" class="btn btn--red btn--sm">Request a quote</a>
+      </nav>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ZÁHLAVÍ STRÁNKY -->
+    <section class="page-hero">
+      <div class="container">
+        <p class="breadcrumb"><a href="index.html">Home</a> / <span>About us</span></p>
+        <h1>About us</h1>
+        <p class="page-hero__lead">A small company with great care.</p>
+      </div>
+    </section>
+
+    <section class="section" id="o-nas">
+      <div class="container split">
+        <div class="split__text">
+          <h2>A small company with great care</h2>
+          <p>[Short company story – when it was founded, who is behind it and what makes it different.] We combine modern CNC technology with a personal approach. We treat every order individually and look for a solution that makes sense both technically and financially.</p>
+          <ul class="checks checks--dark">
+            <li>Personal approach and one contact person throughout the order</li>
+            <li>Fast quotes and deadlines kept</li>
+            <li>Made in the Czech Republic</li>
+          </ul>
+        </div>
+        <div class="split__media img-slot" style="--img:url('../images/o-nas.jpg')"></div>
+      </div>
+    </section>
+    <!-- VÝZVA -->
+    <section class="cta">
+      <div class="container cta__inner">
+        <div>
+          <h2>Have an order? Get in touch.</h2>
+          <p>Send us a drawing or a description and you will get a quote within 48 hours.</p>
+        </div>
+        <a href="kontakt.html#poptavka" class="btn btn--white">Request a free quote</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> INVAKO · CNC machining · Sheltered workshop</p>
+      <nav class="footer__nav" aria-label="Footer">
+        <a href="sluzby.html">Services</a>
+        <a href="realizace.html">Projects</a>
+        <a href="chranena-dilna.html">Sheltered workshop</a>
+        <a href="o-nas.html">About us</a>
+        <a href="kontakt.html">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
