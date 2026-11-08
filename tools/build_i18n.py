@@ -25,6 +25,7 @@ KEEP = {
     'Podnásepní 450/1a', 'Trnitá, 602 00 Brno', '01783564', 'CZ01783564',
     'Street View – Podnásepní 450/1a, Brno', 'CZ', 'EN', 'DE', 'PL',
     'Čeština', 'English', 'Deutsch', 'Polski',
+    'CZ +420', 'SK +421', 'DE +49', 'AT +43', 'PL +48', 'HU +36', 'GB +44',
 }
 
 # code, short label, flag file, language name in that language

@@ -123,7 +123,21 @@
           </div>
           <div class="form__row">
             <label>E-mail<input type="email" name="email" required></label>
-            <label>Telefon<input type="tel" name="telefon"></label>
+            <label>Telefon
+              <span class="phone">
+                <select name="predvolba" aria-label="Předvolba">
+                <option value="+420" selected>CZ +420</option>
+                <option value="+421">SK +421</option>
+                <option value="+49">DE +49</option>
+                <option value="+43">AT +43</option>
+                <option value="+48">PL +48</option>
+                <option value="+36">HU +36</option>
+                <option value="+44">GB +44</option>
+                <option value="">Jiná</option>
+                </select>
+                <input type="tel" name="telefon" inputmode="tel" autocomplete="tel-national">
+              </span>
+            </label>
           </div>
           <label>Popis zakázky<textarea name="zprava" rows="5" required placeholder="Materiál, rozměry, počet kusů, termín…"></textarea></label>
           <label class="form__check"><input type="checkbox" name="nahradni"> Mám zájem o náhradní plnění</label>

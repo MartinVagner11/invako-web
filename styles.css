@@ -222,6 +222,10 @@ p { margin: 0 0 1em; }
 .form input:focus, .form textarea:focus { outline: 2px solid var(--navy); outline-offset: 1px; background: var(--white); }
 .form .form__check { display: flex; align-items: center; gap: 10px; }
 .form__check input { width: 18px; height: 18px; accent-color: var(--red); }
+.phone { display: flex; gap: 8px; }
+.phone select { font: inherit; font-size: 1rem; padding: 12px 8px; border: 1px solid var(--line); border-radius: 6px; background: var(--light); color: var(--ink); flex: none; cursor: pointer; }
+.phone select:focus { outline: 2px solid var(--navy); outline-offset: 1px; background: var(--white); }
+.phone input { flex: 1; min-width: 0; }
 .form .btn { justify-self: start; }
 .form__note { margin: 0; font-size: .8rem; color: var(--muted); }
 .form .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }

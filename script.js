@@ -55,9 +55,17 @@ function showStatus(type, text) {
   statusEl.textContent = text;
 }
 
+// Phone prefix: preselect by page language, then merge prefix + number on submit
+const prefixSelect = form?.querySelector('select[name=predvolba]');
+const PREFIX_BY_LANG = { de: '+49', pl: '+48' };
+if (prefixSelect && PREFIX_BY_LANG[document.documentElement.lang]) prefixSelect.value = PREFIX_BY_LANG[document.documentElement.lang];
+
 form?.addEventListener('submit', async e => {
   e.preventDefault();
   const f = new FormData(form);
+  const number = (f.get('telefon') || '').trim();
+  f.set('telefon', number ? `${f.get('predvolba') || ''} ${number}`.trim() : '');
+  f.delete('predvolba');
 
   if (!FORM_ENDPOINT) {
     const body = [
