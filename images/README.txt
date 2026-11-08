@@ -4,9 +4,9 @@ logo.jpg                 ✓ done (cropped from LOGO.jpg; original kept as logo-
 favicon.png              ✓ done (hexagon mark from the logo)
 hero.jpg                 main banner, 1920×1080
 sluzba-frezovani.jpg     services – CNC milling, 800×600
-sluzba-gravirovani.jpg   services – engraving and labels
-sluzba-rezani.jpg        services – sheet cutting
-sluzba-zakazkova.jpg     services – custom production
+sluzba-laser.jpg         services – laser cutting and marking
+sluzba-ohybani-plexi.jpg services – bending and gluing plexiglass
+sluzba-kompletace.jpg    services – assembly
 chranena-dilna.jpg       team / workplace
 o-nas.jpg                about us
 kontakt.jpg              home page tile for Kontakt (e.g. building / entrance)
