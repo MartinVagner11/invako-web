@@ -256,12 +256,11 @@ p { margin: 0 0 1em; }
 .tile__more { margin-top: auto; font-weight: 700; color: var(--red); }
 
 /* Call to action strip */
-.cta { background: var(--red); color: var(--white); }
+.cta { background: var(--navy); color: #c9cce0; border-bottom: 1px solid rgba(255,255,255,.08); }
 .cta__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding: 48px 0; }
 .cta h2 { color: var(--white); margin-bottom: .2em; font-size: clamp(1.5rem, 3vw, 2rem); }
-.cta p { margin: 0; opacity: .92; }
-.btn--white { background: var(--white); color: var(--red); }
-.btn--white:hover { background: var(--navy); color: var(--white); }
+.cta h2::before { content: ""; display: block; width: 40px; height: 3px; background: var(--red); border-radius: 2px; margin-bottom: 14px; }
+.cta p { margin: 0; }
 
 /* Footer */
 .footer { background: var(--navy-dark); color: #9a9fc0; font-size: .9rem; }
