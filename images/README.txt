@@ -4,8 +4,7 @@ logo.jpg                 ✓ done (cropped from LOGO.jpg; original kept as logo-
 favicon.png              ✓ done (hexagon mark from the logo)
 hero.jpg                 main banner, 1920×1080
 sluzba-frezovani.jpg     services – CNC milling, 800×600
-karta-laser.jpg          ✓ done – Services page card for laser (photo of the Lokal holder)
-sluzba-laser.jpg         laser service detail page (still empty)
+sluzba-laser.jpg         ✓ done – laser service (card + detail page): engraved hip flask
 sluzba-ohybani-plexi.jpg services – bending and gluing plexiglass
 sluzba-kompletace.jpg    services – assembly
 chranena-dilna.jpg       team / workplace
