@@ -168,6 +168,17 @@ p { margin: 0 0 1em; }
 .checks li::before { content: ""; position: absolute; left: 0; top: .3em; width: 18px; height: 18px; border-radius: 50%; background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center / 11px no-repeat; }
 .checks--dark { margin-top: 24px; color: var(--navy); font-weight: 500; }
 
+/* Clickable cards and tiles: grow on hover so it's obvious they open */
+a.card--link, a.tile { transition: transform .3s cubic-bezier(.2,.7,.3,1), box-shadow .3s, border-color .3s, opacity .6s ease; }
+a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visible {
+  transform: translateY(-6px) scale(1.04); box-shadow: 0 22px 45px rgba(37,42,83,.18); border-color: var(--red); z-index: 1; position: relative;
+}
+.card--link .card__img, .tile .tile__img { transition: transform .5s cubic-bezier(.2,.7,.3,1); }
+.card--link:hover .card__img, .tile:hover .tile__img { transform: scale(1.08); }
+.card__more, .tile__more { display: inline-block; transition: transform .3s; }
+.card--link:hover .card__more, .tile:hover .tile__more { transform: translateX(6px); }
+@media (hover: none) { a.card--link:hover, a.tile:hover { transform: none; } .card--link:hover .card__img, .tile:hover .tile__img { transform: none; } }
+
 /* Steps */
 .steps { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; counter-reset: s; }
 .steps li { padding: 28px 24px; border: 1px solid var(--line); border-radius: var(--radius); position: relative; }
@@ -274,6 +285,9 @@ p { margin: 0 0 1em; }
 .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
 .reveal.is-visible { opacity: 1; transform: none; }
 @media (prefers-reduced-motion: reduce) {
+  .card--link, .tile, .card--link .card__img, .tile .tile__img, .card__more, .tile__more { transition: none; }
+  a.card--link:hover, a.tile:hover { transform: none; }
+  .card--link:hover .card__img, .tile:hover .tile__img, .card--link:hover .card__more, .tile:hover .tile__more { transform: none; }
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
 }
