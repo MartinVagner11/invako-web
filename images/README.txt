@@ -10,4 +10,3 @@ sluzba-kompletace.jpg    services – assembly
 chranena-dilna.jpg       team / workplace
 o-nas.jpg                about us
 kontakt.jpg              home page tile for Kontakt (e.g. building / entrance)
-realizace-1.jpg … realizace-6.jpg   project gallery, 4:3

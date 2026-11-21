@@ -3,7 +3,7 @@ import re
 
 PAGES = [
     'index.html', 'sluzby.html', 'sluzba-frezovani.html', 'sluzba-laser.html',
-    'sluzba-ohybani-plexi.html', 'sluzba-kompletace.html', 'realizace.html',
+    'sluzba-ohybani-plexi.html', 'sluzba-kompletace.html',
     'chranena-dilna.html', 'o-nas.html', 'kontakt.html',
 ]
 LANGS = ['en', 'de', 'pl']

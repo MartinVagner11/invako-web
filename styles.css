@@ -247,7 +247,7 @@ p { margin: 0 0 1em; }
 
 /* Home tiles */
 .tiles { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-.tiles > .tile { width: calc((100% - 48px) / 3); }
+.tiles > .tile { width: calc((100% - 72px) / 4); }
 .tile { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; text-decoration: none; color: inherit; transition: transform .25s, box-shadow .25s; }
 .tile:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 .tile__img { aspect-ratio: 16 / 9; }
