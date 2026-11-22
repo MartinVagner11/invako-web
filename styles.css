@@ -154,6 +154,11 @@ p { margin: 0 0 1em; }
   cursor: pointer; box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: background .2s, color .2s, transform .2s; }
 .video-replay[hidden] { display: none; }
 .video-replay:hover { background: var(--red); color: #fff; transform: scale(1.08); }
+.back-link--mobile { display: none; }
+@media (max-width: 860px) {
+  .service-text .back-link--desktop { display: none; }
+  .back-link--mobile { display: inline-block; align-self: flex-start; margin-top: 20px; }
+}
 .split:has(.split__side) { align-items: start; }
 .service-gallery--swap.service-gallery--small { grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .split__side-title { font-size: 1.4rem; margin: 0 0 2px; }
