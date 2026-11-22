@@ -147,6 +147,7 @@ p { margin: 0 0 1em; }
 .service-text .back-link { display: inline-block; margin-top: 36px; }
 .service-gallery { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; }
 .split__side { display: flex; flex-direction: column; gap: 12px; height: 100%; }
+.split__side-title { font-size: 1.4rem; margin: 0 0 2px; }
 .split__side .split__media { flex: 1; height: auto; }
 .service-gallery--swap { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); }
 .service-gallery figure.has-photo { cursor: pointer; transition: transform .25s ease, box-shadow .25s ease; }
