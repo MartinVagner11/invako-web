@@ -8,4 +8,4 @@ dlazdice-sluzby.jpg      ✓ done – home page "Služby" tile: red laser icon
 sluzba-laser.jpg         ✓ done – laser service (card + detail page): engraved hip flask
 sluzba-ohybani-plexi.jpg ✓ done – plexi bending (card + detail page): bent blue acrylic
 sluzba-kompletace.jpg    ✓ done – assembly (card + detail page): taping a box
-kontakt.jpg              home page tile for Kontakt (e.g. building / entrance)
+kontakt.jpg              ✓ done – home page "Kontakt" tile: red envelope icon
