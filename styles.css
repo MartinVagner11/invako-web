@@ -145,6 +145,8 @@ p { margin: 0 0 1em; }
 .service-text .service-text__title { margin-top: 0; }
 .service-text__lead { font-size: 1.15rem; color: var(--ink) !important; }
 .service-text .back-link { display: inline-block; margin-top: 36px; }
+.service-gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.service-gallery figure { margin: 0; aspect-ratio: 4 / 3; border-radius: 8px; }
 
 /* Split layout */
 .split { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }

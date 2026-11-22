@@ -10,3 +10,4 @@ sluzba-ohybani-plexi.jpg ✓ done – plexi bending (card + detail page): bent b
 sluzba-kompletace.jpg    ✓ done – assembly (card + detail page): taping a box
 kontakt.jpg              ✓ done – home page "Kontakt" tile: red envelope icon
 o-nas.jpg                ✓ done – home page "O nás" tile: red INVAKO logo
+realizace-frezovani-1..3.jpg, realizace-laser-1..3.jpg, realizace-plexi-1..3.jpg, realizace-kompletace-1..3.jpg   project photos on each service page, 4:3
