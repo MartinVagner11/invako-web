@@ -383,6 +383,8 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
   .form { padding: 22px; }
   .stat__num { font-size: 1.5rem; }
   .hero__lead { font-size: 1.05rem; }
+  .hero__actions { flex-wrap: nowrap; gap: 10px; }
+  .hero__actions .btn { flex: 1 1 0; padding: 12px 10px; font-size: .92rem; text-align: center; justify-content: center; line-height: 1.2; }
 }
 @media (max-width: 860px) {
   .hero__content { grid-template-columns: 1fr; gap: 8px; padding-bottom: 40px; }
