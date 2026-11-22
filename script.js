@@ -144,3 +144,15 @@ if (mainPhoto) {
     test.src = fig.dataset.full;
   });
 }
+
+// Video: na konci se zastaví a ukáže šipku „přehrát znovu“
+document.querySelectorAll('.service-video').forEach((box) => {
+  const video = box.querySelector('video');
+  const replay = box.querySelector('.video-replay');
+  video.addEventListener('ended', () => { replay.hidden = false; });
+  replay.addEventListener('click', () => {
+    replay.hidden = true;
+    video.currentTime = 0;
+    video.play();
+  });
+});
