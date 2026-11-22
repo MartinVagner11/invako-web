@@ -101,27 +101,22 @@ form?.addEventListener('submit', async e => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Realizace: kliknutím se fotka zvětší (jen pokud fotka existuje)
+// Realizace: kliknutím se malá fotka prohodí s velkou (jen pokud fotka existuje)
+const mainPhoto = document.querySelector('[data-main-photo]');
 document.querySelectorAll('.service-gallery figure[data-full]').forEach((fig) => {
-  const src = fig.dataset.full;
+  if (!mainPhoto) return;
   const test = new Image();
   test.onload = () => {
     fig.classList.add('has-photo');
-    fig.addEventListener('click', () => openLightbox(src));
+    fig.addEventListener('click', () => {
+      mainPhoto.style.opacity = 0;
+      setTimeout(() => {
+        const big = mainPhoto.getAttribute('style').replace(/;?\s*opacity:[^;]*;?/, '');
+        mainPhoto.setAttribute('style', fig.getAttribute('style'));
+        fig.setAttribute('style', big);
+        mainPhoto.style.opacity = 1;
+      }, 200);
+    });
   };
-  test.src = src;
+  test.src = fig.dataset.full;
 });
-
-function openLightbox(src) {
-  let box = document.querySelector('.lightbox');
-  if (!box) {
-    box = document.createElement('div');
-    box.className = 'lightbox';
-    box.innerHTML = '<button class="lightbox__close" aria-label="Zavřít">×</button><img alt="">';
-    box.addEventListener('click', () => { box.hidden = true; });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') box.hidden = true; });
-    document.body.appendChild(box);
-  }
-  box.querySelector('img').src = src;
-  box.hidden = false;
-}
