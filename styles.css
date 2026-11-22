@@ -37,7 +37,7 @@ p { margin: 0 0 1em; }
 /* Image slots: real image on top, striped placeholder underneath until images are supplied */
 .img-slot {
   background:
-    var(--img) center / cover no-repeat,
+    var(--img) var(--img-pos, center) / var(--img-size, cover) no-repeat,
     repeating-linear-gradient(135deg, #dfe2ec 0 14px, #e9ebf2 14px 28px);
   background-color: #e3e5ee;
 }
