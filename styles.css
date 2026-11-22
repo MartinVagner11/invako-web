@@ -151,6 +151,7 @@ p { margin: 0 0 1em; }
 .split--reverse .split__media { order: 2; }
 .split__media { min-height: 460px; height: 100%; border-radius: var(--radius); }
 .split__text > p { color: var(--muted); }
+.text-only { max-width: 760px; }
 .section--navy .split__text > p { color: #c9cce0; }
 
 .tags { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-wrap: wrap; gap: 8px; }
