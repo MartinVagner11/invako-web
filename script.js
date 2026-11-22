@@ -133,7 +133,7 @@ if (mainPhoto) {
     test.onload = () => {
       fig.classList.add('has-photo');
       thumbs.push(fig);
-      thumbs.sort((a, b) => a.dataset.full.localeCompare(b.dataset.full));
+      thumbs.sort((a, b) => a.dataset.full.localeCompare(b.dataset.full, undefined, { numeric: true }));
       addArrows();
       fig.addEventListener('click', () => fade(() => {
         const big = cleanStyle(mainPhoto);

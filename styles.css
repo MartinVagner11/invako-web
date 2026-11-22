@@ -148,6 +148,7 @@ p { margin: 0 0 1em; }
 .service-gallery { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; }
 .split__side { display: flex; flex-direction: column; gap: 12px; height: 100%; }
 .split:has(.split__side) { align-items: start; }
+.service-gallery--swap.service-gallery--small { grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .split__side-title { font-size: 1.4rem; margin: 0 0 2px; }
 .split__side .split__media { flex: 1; height: auto; }
 .service-gallery--swap { grid-auto-flow: row; grid-template-columns: repeat(3, 1fr); }
