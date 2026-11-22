@@ -9,3 +9,4 @@ sluzba-laser.jpg         ✓ done – laser service (card + detail page): engrav
 sluzba-ohybani-plexi.jpg ✓ done – plexi bending (card + detail page): bent blue acrylic
 sluzba-kompletace.jpg    ✓ done – assembly (card + detail page): taping a box
 kontakt.jpg              ✓ done – home page "Kontakt" tile: red envelope icon
+o-nas.jpg                ✓ done – home page "O nás" tile: red INVAKO logo
