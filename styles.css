@@ -111,9 +111,9 @@ p { margin: 0 0 1em; }
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
 
 /* Stats */
-.stats { background: var(--red); color: var(--white); }
+.stats { background: var(--navy); color: var(--white); border-top: 1px solid rgba(255,255,255,.12); }
 .stats__grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.stat { padding: 28px 16px; text-align: center; border-left: 1px solid rgba(255,255,255,.25); }
+.stat { padding: 28px 16px; text-align: center; border-left: 1px solid rgba(255,255,255,.15); }
 .stat:first-child { border-left: 0; }
 .stat__num { display: block; font-size: 1.9rem; font-weight: 800; }
 .stat__label { font-size: .95rem; opacity: .9; }
@@ -360,7 +360,7 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
   .split__media { min-height: 280px; }
   .stats__grid { grid-template-columns: repeat(2, 1fr); }
   .stat:nth-child(3) { border-left: 0; }
-  .stat:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.25); }
+  .stat:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,.15); }
   .gallery { grid-template-columns: repeat(2, 1fr); }
   .section { padding: 72px 0; }
 }
