@@ -6,7 +6,7 @@ hero.jpg                 main banner, 1920×1080
 sluzba-frezovani.jpg     ✓ done – CNC milling (card, detail page, home tile): green milled parts
 sluzba-laser.jpg         ✓ done – laser service (card + detail page): engraved hip flask
 sluzba-ohybani-plexi.jpg services – bending and gluing plexiglass
-sluzba-kompletace.jpg    services – assembly
+sluzba-kompletace.jpg    ✓ done – assembly (card + detail page): taping a box
 chranena-dilna.jpg       team / workplace
 o-nas.jpg                about us
 kontakt.jpg              home page tile for Kontakt (e.g. building / entrance)
