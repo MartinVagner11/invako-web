@@ -101,22 +101,46 @@ form?.addEventListener('submit', async e => {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-// Realizace: kliknutím se malá fotka prohodí s velkou (jen pokud fotka existuje)
+// Realizace: malé fotky pod velkou – klik prohodí s velkou, šipky na velké fotce je točí dokola
 const mainPhoto = document.querySelector('[data-main-photo]');
-document.querySelectorAll('.service-gallery figure[data-full]').forEach((fig) => {
-  if (!mainPhoto) return;
-  const test = new Image();
-  test.onload = () => {
-    fig.classList.add('has-photo');
-    fig.addEventListener('click', () => {
-      mainPhoto.style.opacity = 0;
-      setTimeout(() => {
-        const big = mainPhoto.getAttribute('style').replace(/;?\s*opacity:[^;]*;?/, '');
-        mainPhoto.setAttribute('style', fig.getAttribute('style'));
-        fig.setAttribute('style', big);
-        mainPhoto.style.opacity = 1;
-      }, 200);
+if (mainPhoto) {
+  const thumbs = [];
+  const cleanStyle = (el) => el.getAttribute('style').replace(/;?\s*opacity:[^;]*;?/, '');
+  const fade = (change) => {
+    mainPhoto.style.opacity = 0;
+    setTimeout(() => { change(); mainPhoto.style.opacity = 1; }, 200);
+  };
+  // posun dokola: dir = 1 další, -1 předchozí
+  const rotate = (dir) => fade(() => {
+    const slots = [mainPhoto, ...thumbs];
+    const styles = slots.map(cleanStyle);
+    slots.forEach((el, k) => el.setAttribute('style', styles[(k + dir + styles.length) % styles.length]));
+  });
+  const addArrows = () => {
+    if (mainPhoto.querySelector('.photo-arrow')) return;
+    [['prev', '‹', -1], ['next', '›', 1]].forEach(([cls, label, dir]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = `photo-arrow photo-arrow--${cls}`;
+      b.setAttribute('aria-label', dir < 0 ? 'Předchozí fotka' : 'Další fotka');
+      b.textContent = label;
+      b.addEventListener('click', () => rotate(dir));
+      mainPhoto.appendChild(b);
     });
   };
-  test.src = fig.dataset.full;
-});
+  document.querySelectorAll('.service-gallery figure[data-full]').forEach((fig) => {
+    const test = new Image();
+    test.onload = () => {
+      fig.classList.add('has-photo');
+      thumbs.push(fig);
+      thumbs.sort((a, b) => a.dataset.full.localeCompare(b.dataset.full));
+      addArrows();
+      fig.addEventListener('click', () => fade(() => {
+        const big = cleanStyle(mainPhoto);
+        mainPhoto.setAttribute('style', fig.getAttribute('style'));
+        fig.setAttribute('style', big);
+      }));
+    };
+    test.src = fig.dataset.full;
+  });
+}
