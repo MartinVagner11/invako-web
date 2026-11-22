@@ -147,6 +147,7 @@ p { margin: 0 0 1em; }
 .service-text .back-link { display: inline-block; margin-top: 36px; }
 .service-gallery { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; }
 .split__side { display: flex; flex-direction: column; gap: 12px; height: 100%; }
+.service-video { display: block; width: 100%; margin-top: 32px; border-radius: var(--radius); background: #111; aspect-ratio: 16 / 9; object-fit: cover; }
 .split:has(.split__side) { align-items: start; }
 .service-gallery--swap.service-gallery--small { grid-template-columns: repeat(4, 1fr); gap: 8px; }
 .split__side-title { font-size: 1.4rem; margin: 0 0 2px; }
