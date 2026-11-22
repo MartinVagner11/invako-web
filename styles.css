@@ -155,7 +155,7 @@ p { margin: 0 0 1em; }
 .split__text > p { color: var(--muted); }
 .text-only { max-width: 760px; }
 .about-logo { display: flex; align-items: center; justify-content: center; }
-.about-logo img { width: 100%; max-width: 440px; height: auto; }
+.about-logo img { width: 100%; max-width: 340px; height: auto; }
 .section--navy .split__text > p { color: #c9cce0; }
 
 .tags { list-style: none; padding: 0; margin: 24px 0; display: flex; flex-wrap: wrap; gap: 8px; }
