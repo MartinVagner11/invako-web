@@ -35,7 +35,7 @@ revealEls.forEach(el => io.observe(el));
 // FORM_ENDPOINT = URL of the deployed Google Apps Script web app (poptavka-apps-script.gs).
 // While it's empty, the form falls back to opening the visitor's mail client.
 const FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbwz3CT81mtiqBkAnRPwY3jqx9EYmgoiose_lnGGSRUgll6_OiJLCL__FDtix1MONv5a/exec';
-const FALLBACK_EMAIL = 'franzova.hana@invako.cz';
+const FALLBACK_EMAIL = 'info@invako.cz';
 
 // Form messages in the page's language (<html lang="…">)
 const MESSAGES = {
@@ -45,6 +45,49 @@ const MESSAGES = {
   pl: { sending: 'Wysyłanie…', send: 'Wyślij zapytanie', ok: 'Dziękujemy! Zapytanie zostało wysłane – odezwiemy się w ciągu 48 godzin.', error: 'Wysyłanie nie powiodło się. Spróbuj ponownie lub napisz do nas na' },
 };
 const msg = MESSAGES[document.documentElement.lang] || MESSAGES.cs;
+
+// Vlastní hlášky u povinných polí (místo šedé bubliny prohlížeče), v jazyce stránky
+const FIELD_ERRORS = {
+  cs: { required: 'Vyplňte prosím toto pole.', email: 'Zadejte prosím platný e-mail, např. jmeno@firma.cz.', phone: 'Zadejte prosím platné telefonní číslo.' },
+  en: { required: 'Please fill in this field.', email: 'Please enter a valid e-mail, e.g. name@company.com.', phone: 'Please enter a valid phone number.' },
+  de: { required: 'Bitte füllen Sie dieses Feld aus.', email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein, z. B. name@firma.de.', phone: 'Bitte geben Sie eine gültige Telefonnummer ein.' },
+  pl: { required: 'Proszę wypełnić to pole.', email: 'Proszę podać prawidłowy e-mail, np. imie@firma.pl.', phone: 'Proszę podać prawidłowy numer telefonu.' },
+};
+const fieldMsg = FIELD_ERRORS[document.documentElement.lang] || FIELD_ERRORS.cs;
+
+function fieldProblem(input) {
+  const v = input.value.trim();
+  if (!v) return fieldMsg.required;
+  if (input.type === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)) return fieldMsg.email;
+  if (input.type === 'tel' && v.replace(/\D/g, '').length < 6) return fieldMsg.phone;
+  return '';
+}
+
+function setFieldError(input, text) {
+  const label = input.closest('label');
+  let el = label.querySelector('.field-error');
+  input.classList.toggle('is-invalid', !!text);
+  input.setAttribute('aria-invalid', text ? 'true' : 'false');
+  if (!text) { el?.remove(); return; }
+  if (!el) {
+    el = document.createElement('span');
+    el.className = 'field-error';
+    el.setAttribute('role', 'alert');
+    label.append(el);
+  }
+  el.textContent = text;
+}
+
+function validateForm(form) {
+  let first = null;
+  form.querySelectorAll('[required]').forEach(input => {
+    const problem = fieldProblem(input);
+    setFieldError(input, problem);
+    if (problem && !first) first = input;
+  });
+  first?.focus();
+  return !first;
+}
 
 const form = document.getElementById('contactForm');
 const statusEl = document.getElementById('formStatus');
@@ -60,8 +103,16 @@ const prefixSelect = form?.querySelector('select[name=predvolba]');
 const PREFIX_BY_LANG = { de: '+49', pl: '+48' };
 if (prefixSelect && PREFIX_BY_LANG[document.documentElement.lang]) prefixSelect.value = PREFIX_BY_LANG[document.documentElement.lang];
 
+if (form) {
+  form.noValidate = true; // bez bubliny prohlížeče, hlášky ukazujeme sami
+  form.querySelectorAll('[required]').forEach(input => {
+    input.addEventListener('input', () => { if (input.classList.contains('is-invalid')) setFieldError(input, fieldProblem(input)); });
+  });
+}
+
 form?.addEventListener('submit', async e => {
   e.preventDefault();
+  if (!validateForm(form)) return;
   const f = new FormData(form);
   const number = (f.get('telefon') || '').trim();
   f.set('telefon', number ? `${f.get('predvolba') || ''} ${number}`.trim() : '');

@@ -277,6 +277,9 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
 .form .btn { justify-self: start; }
 .form__note { margin: 0; font-size: .8rem; color: var(--muted); }
 .req { color: var(--red); font-weight: 700; }
+.form input.is-invalid { outline: 2px solid var(--red); outline-offset: 1px; background: #fff5f5; }
+.field-error { display: flex; align-items: center; gap: 8px; color: var(--red); font-size: .85rem; font-weight: 500; }
+.field-error::before { content: "!"; flex: none; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--red); color: #fff; font-size: .75rem; font-weight: 800; }
 .form__note--req { margin-top: -6px; }
 .form .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form__status { margin: 0; padding: 12px 14px; border-radius: 6px; font-weight: 500; font-size: .95rem; }
