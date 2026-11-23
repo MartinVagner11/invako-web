@@ -276,6 +276,8 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
 .phone input { flex: 1; min-width: 0; }
 .form .btn { justify-self: start; }
 .form__note { margin: 0; font-size: .8rem; color: var(--muted); }
+.req { color: var(--red); font-weight: 700; }
+.form__note--req { margin-top: -6px; }
 .form .form__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .form__status { margin: 0; padding: 12px 14px; border-radius: 6px; font-weight: 500; font-size: .95rem; }
 .form__status--ok { background: #e7f6ec; color: #17653a; }
