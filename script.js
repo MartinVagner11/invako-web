@@ -298,7 +298,7 @@ function buildCookieBar() {
       </div>
       <div class="cookie-bar__buttons">
         <button type="button" class="cookie-btn" data-cookie="reject">${ct.reject}</button>
-        <button type="button" class="cookie-btn cookie-btn--link" data-cookie="settings">${ct.settings}</button>
+        <button type="button" class="cookie-btn" data-cookie="settings">${ct.settings}</button>
         <button type="button" class="cookie-btn" data-cookie="accept">${ct.accept}</button>
       </div>
     </div>`;
@@ -310,7 +310,7 @@ function buildCookieBar() {
   bar.querySelector('[data-cookie="accept"]').onclick = () => close(true);
   bar.querySelector('[data-cookie="reject"]').onclick = () => close(false);
   settingsBtn.onclick = () => {
-    if (settings.hidden) { settings.hidden = false; settingsBtn.textContent = ct.save; settingsBtn.classList.remove('cookie-btn--link'); }
+    if (settings.hidden) { settings.hidden = false; settingsBtn.textContent = ct.save; }
     else close(mapsBox.checked);
   };
   return {
@@ -318,7 +318,6 @@ function buildCookieBar() {
       mapsBox.checked = !!readConsent()?.maps;
       settings.hidden = !withSettings;
       settingsBtn.textContent = withSettings ? ct.save : ct.settings;
-      settingsBtn.classList.toggle('cookie-btn--link', !withSettings); // Uložit nastavení = modré tlačítko
       bar.hidden = false;
       bar.querySelector('button').focus();
     },
