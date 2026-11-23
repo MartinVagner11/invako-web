@@ -87,7 +87,8 @@ p { margin: 0 0 1em; }
 .header { position: sticky; top: 0; z-index: 50; background: var(--white); box-shadow: 0 1px 0 var(--line); }
 .header.is-scrolled { box-shadow: var(--shadow); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
-.logo { text-decoration: none; display: flex; align-items: center; }
+.logo { text-decoration: none; display: flex; align-items: center; padding: 4px 8px; margin: -4px -8px; border: 2px solid transparent; border-radius: 10px; transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease; }
+.logo:hover, .logo:focus-visible { transform: scale(1.08); border-color: var(--red); box-shadow: 0 4px 14px rgba(231, 31, 34, .18); }
 .logo__img { height: 54px; width: auto; }
 .logo__text { font-size: 1.4rem; color: var(--navy); letter-spacing: .02em; }
 .logo__text strong { color: var(--red); font-weight: 800; margin-right: 2px; }
