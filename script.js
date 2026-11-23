@@ -207,3 +207,135 @@ document.querySelectorAll('.service-video').forEach((box) => {
     video.play();
   });
 });
+
+// ===== Cookies: souhlas podle zákona č. 127/2005 Sb. (§ 89 odst. 3) a GDPR =====
+// Web sám ukládá jen nezbytné údaje (tuto volbu). Jediný obsah, který potřebuje souhlas,
+// je mapa Google (Street View) na stránce Kontakt – Google při ní ukládá své cookies.
+// Volba se ukládá v prohlížeči na 12 měsíců; při změně COOKIE_VERSION se lišta ukáže znovu.
+const COOKIE_KEY = 'invako_cookies';
+const COOKIE_VERSION = 1;
+const COOKIE_MAX_AGE = 1000 * 60 * 60 * 24 * 365;
+
+const COOKIE_TEXT = {
+  cs: {
+    title: 'Cookies na tomto webu',
+    text: 'Náš web používá jen nezbytné ukládání dat, které potřebuje ke svému fungování. Mapu Google na stránce Kontakt, která ukládá cookies společnosti Google, načteme jen s vaším souhlasem.',
+    more: 'Více o ochraně osobních údajů',
+    accept: 'Přijmout vše', reject: 'Odmítnout vše', settings: 'Nastavení', save: 'Uložit nastavení',
+    necessary: 'Nezbytné', necessaryText: 'Zajišťují základní funkce webu a uložení této volby. Nelze je vypnout.', always: 'Vždy zapnuto',
+    maps: 'Mapy Google', mapsText: 'Zobrazení mapy Street View na stránce Kontakt. Google při tom ukládá své cookies.',
+  },
+  en: {
+    title: 'Cookies on this website',
+    text: 'Our website only uses the essential data storage it needs to work. The Google map on the Contact page, which stores Google cookies, is only loaded with your consent.',
+    more: 'More about data protection',
+    accept: 'Accept all', reject: 'Reject all', settings: 'Settings', save: 'Save settings',
+    necessary: 'Essential', necessaryText: 'Needed for the basic functions of the website and to remember this choice. They cannot be switched off.', always: 'Always on',
+    maps: 'Google Maps', mapsText: 'Shows the Street View map on the Contact page. Google stores its own cookies when it does so.',
+  },
+  de: {
+    title: 'Cookies auf dieser Website',
+    text: 'Unsere Website nutzt nur die technisch notwendige Datenspeicherung. Die Google-Karte auf der Kontaktseite, die Cookies von Google speichert, laden wir nur mit Ihrer Einwilligung.',
+    more: 'Mehr zum Datenschutz',
+    accept: 'Alle akzeptieren', reject: 'Alle ablehnen', settings: 'Einstellungen', save: 'Einstellungen speichern',
+    necessary: 'Notwendig', necessaryText: 'Für die Grundfunktionen der Website und zum Speichern dieser Auswahl. Sie können nicht deaktiviert werden.', always: 'Immer aktiv',
+    maps: 'Google Maps', mapsText: 'Anzeige der Street-View-Karte auf der Kontaktseite. Google speichert dabei eigene Cookies.',
+  },
+  pl: {
+    title: 'Pliki cookies na tej stronie',
+    text: 'Nasza strona korzysta tylko z niezbędnego przechowywania danych potrzebnego do jej działania. Mapę Google na stronie Kontakt, która zapisuje pliki cookies firmy Google, wczytamy tylko za Twoją zgodą.',
+    more: 'Więcej o ochronie danych osobowych',
+    accept: 'Akceptuj wszystkie', reject: 'Odrzuć wszystkie', settings: 'Ustawienia', save: 'Zapisz ustawienia',
+    necessary: 'Niezbędne', necessaryText: 'Zapewniają podstawowe funkcje strony i zapamiętanie tego wyboru. Nie można ich wyłączyć.', always: 'Zawsze włączone',
+    maps: 'Mapy Google', mapsText: 'Wyświetlenie mapy Street View na stronie Kontakt. Google zapisuje przy tym własne pliki cookies.',
+  },
+};
+const ct = COOKIE_TEXT[document.documentElement.lang] || COOKIE_TEXT.cs;
+
+function readConsent() {
+  try {
+    const c = JSON.parse(localStorage.getItem(COOKIE_KEY));
+    if (!c || c.v !== COOKIE_VERSION || Date.now() - new Date(c.t).getTime() > COOKIE_MAX_AGE) return null;
+    return c;
+  } catch { return null; }
+}
+
+function saveConsent(maps) {
+  const had = readConsent();
+  try { localStorage.setItem(COOKIE_KEY, JSON.stringify({ v: COOKIE_VERSION, t: new Date().toISOString(), maps })); } catch {}
+  // Odvolání souhlasu s mapou: obnovit stránku, aby mapa (a její skripty) zmizela
+  if (had?.maps && !maps && document.querySelector('[data-consent-map] iframe[src]')) location.reload();
+  applyConsent(maps);
+}
+
+function applyConsent(maps) {
+  document.querySelectorAll('[data-consent-map]').forEach(box => {
+    const frame = box.querySelector('iframe');
+    if (maps && !frame.src) frame.src = frame.dataset.src;
+    frame.hidden = !maps;
+    box.querySelector('.map-consent').hidden = maps;
+  });
+}
+
+function buildCookieBar() {
+  const bar = document.createElement('section');
+  bar.className = 'cookie-bar';
+  bar.setAttribute('role', 'dialog');
+  bar.setAttribute('aria-label', ct.title);
+  bar.innerHTML = `
+    <div class="cookie-bar__inner">
+      <p class="cookie-bar__title">${ct.title}</p>
+      <p class="cookie-bar__text">${ct.text} <a href="ochrana-osobnich-udaju.html#cookies">${ct.more}</a></p>
+      <div class="cookie-bar__settings" hidden>
+        <label class="cookie-opt">
+          <input type="checkbox" checked disabled>
+          <span><strong>${ct.necessary}</strong> <em>${ct.always}</em><br>${ct.necessaryText}</span>
+        </label>
+        <label class="cookie-opt">
+          <input type="checkbox" data-opt="maps">
+          <span><strong>${ct.maps}</strong><br>${ct.mapsText}</span>
+        </label>
+      </div>
+      <div class="cookie-bar__buttons">
+        <button type="button" class="cookie-btn" data-cookie="reject">${ct.reject}</button>
+        <button type="button" class="cookie-btn cookie-btn--link" data-cookie="settings">${ct.settings}</button>
+        <button type="button" class="cookie-btn" data-cookie="accept">${ct.accept}</button>
+      </div>
+    </div>`;
+  document.body.append(bar);
+  const settings = bar.querySelector('.cookie-bar__settings');
+  const mapsBox = bar.querySelector('[data-opt="maps"]');
+  const settingsBtn = bar.querySelector('[data-cookie="settings"]');
+  const close = (maps) => { saveConsent(maps); bar.hidden = true; };
+  bar.querySelector('[data-cookie="accept"]').onclick = () => close(true);
+  bar.querySelector('[data-cookie="reject"]').onclick = () => close(false);
+  settingsBtn.onclick = () => {
+    if (settings.hidden) { settings.hidden = false; settingsBtn.textContent = ct.save; }
+    else close(mapsBox.checked);
+  };
+  return {
+    open(withSettings) {
+      mapsBox.checked = !!readConsent()?.maps;
+      settings.hidden = !withSettings;
+      settingsBtn.textContent = withSettings ? ct.save : ct.settings;
+      bar.hidden = false;
+      bar.querySelector('button').focus();
+    },
+  };
+}
+
+const cookieBar = buildCookieBar();
+const consent = readConsent();
+applyConsent(!!consent?.maps);
+document.querySelector('.cookie-bar').hidden = !!consent; // lišta jen dokud není volba uložená
+
+// Patička: „Nastavení cookies“ znovu otevře lištu s volbami
+document.querySelectorAll('[data-cookie-settings]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  cookieBar.open(true);
+}));
+// Tlačítko „Zobrazit mapu“ přímo u mapy = souhlas jen s mapou
+document.querySelectorAll('[data-load-map]').forEach(b => b.addEventListener('click', () => {
+  saveConsent(true);
+  document.querySelector('.cookie-bar').hidden = true;
+}));

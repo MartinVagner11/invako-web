@@ -5,10 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kontakt | INVAKO</title>
   <meta name="description" content="Kontakt z INVAKO – Podnásepní 450/1a, Brno, Czechy. Wyślij nam zapytanie.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700;9..40,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../styles.css?v=36">
+  <link rel="stylesheet" href="../styles.css?v=38">
   <link rel="icon" type="image/png" href="../images/favicon.png">
 </head>
 <body>
@@ -102,9 +99,15 @@
           <h3>Rozejrzyj się, gdzie nas znajdziesz</h3>
           <a href="https://www.google.com/maps/@49.1945779,16.6240997,3a,75y,70.83h,85.32t/data=!3m4!1e1!3m2!1sAerF8OoGw4k8dHxEZJhXkg!2e0" target="_blank" rel="noopener">Otwórz w Street View ↗</a>
         </div>
-        <div class="streetview__frame">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!4v1760889600000!6m8!1m7!1sAerF8OoGw4k8dHxEZJhXkg!2m2!1d49.1945779!2d16.6240997!3f70.83!4f-4.68!5f0.78"
+        <!-- MAPA: načte se až se souhlasem (cookie lišta nebo tlačítko Zobrazit mapu), Google ukládá cookies -->
+        <div class="streetview__frame" data-consent-map>
+          <div class="map-consent">
+            <p class="map-consent__title">Mapa Google jest na razie ukryta</p>
+            <p>Podczas wyświetlania mapy Google zapisuje w Twojej przeglądarce pliki cookies. Dlatego wczytamy mapę dopiero za Twoją zgodą.</p>
+            <button type="button" class="btn btn--red" data-load-map>Pokaż mapę</button>
+          </div>
+          <iframe hidden
+            data-src="https://www.google.com/maps/embed?pb=!4v1760889600000!6m8!1m7!1sAerF8OoGw4k8dHxEZJhXkg!2m2!1d49.1945779!2d16.6240997!3f70.83!4f-4.68!5f0.78"
             title="Street View – Podnásepní 450/1a, Brno"
             loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
@@ -145,7 +148,7 @@
           <button class="btn btn--red" type="submit">Wyślij zapytanie</button>
           <p class="form__status" id="formStatus" role="status" aria-live="polite" hidden></p>
           <p class="form__note form__note--req"><span class="req" aria-hidden="true">*</span> Pola oznaczone gwiazdką są obowiązkowe.</p>
-          <p class="form__note">Wysyłając formularz, zgadzasz się na przetwarzanie danych w celu obsługi zapytania.</p>
+          <p class="form__note">Dane z formularza wykorzystamy wyłącznie do obsługi Twojego zapytania. <a href="ochrana-osobnich-udaju.html">Jak chronimy Twoje dane osobowe</a></p>
         </form>
       </div>
     </section>
@@ -161,10 +164,12 @@
         <a href="kontakt.html">Kontakt</a>
         <!-- E-SHOP: zatím nikam nevede, až bude hotový, doplňte adresu do href -->
         <a href="#" onclick="return false">E-sklep</a>
+        <a href="ochrana-osobnich-udaju.html">Ochrona danych osobowych</a>
+        <button type="button" data-cookie-settings>Ustawienia cookies</button>
       </nav>
     </div>
   </footer>
 
-  <script src="../script.js?v=36"></script>
+  <script src="../script.js?v=38"></script>
 </body>
 </html>
