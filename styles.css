@@ -281,6 +281,8 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
 .field-error { display: flex; align-items: center; gap: 8px; color: var(--red); font-size: .85rem; font-weight: 500; }
 /* pod e-mailem a telefonem je předem volné místo na hlášku – popis zakázky se tím posune níž a při chybě neposkakuje */
 .form__row:has([type=email]) > label { position: relative; padding-bottom: 40px; }
+.form__row:has([name=jmeno]) > label:has([required]) { position: relative; padding-bottom: 26px; }
+.form__row:has([name=jmeno]) .field-error { position: absolute; left: 0; right: 0; top: calc(100% - 22px); }
 .form__row:has([type=email]) .field-error { position: absolute; left: 0; right: 0; top: calc(100% - 36px); align-items: flex-start; line-height: 1.3; }
 .field-error::before { content: "!"; flex: none; display: grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: var(--red); color: #fff; font-size: .75rem; font-weight: 800; }
 .form__note--req { margin-top: -6px; }
