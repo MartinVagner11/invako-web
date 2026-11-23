@@ -310,7 +310,7 @@ function buildCookieBar() {
   bar.querySelector('[data-cookie="accept"]').onclick = () => close(true);
   bar.querySelector('[data-cookie="reject"]').onclick = () => close(false);
   settingsBtn.onclick = () => {
-    if (settings.hidden) { settings.hidden = false; settingsBtn.textContent = ct.save; }
+    if (settings.hidden) { settings.hidden = false; settingsBtn.textContent = ct.save; settingsBtn.classList.remove('cookie-btn--link'); }
     else close(mapsBox.checked);
   };
   return {
@@ -318,6 +318,7 @@ function buildCookieBar() {
       mapsBox.checked = !!readConsent()?.maps;
       settings.hidden = !withSettings;
       settingsBtn.textContent = withSettings ? ct.save : ct.settings;
+      settingsBtn.classList.toggle('cookie-btn--link', !withSettings); // Uložit nastavení = modré tlačítko
       bar.hidden = false;
       bar.querySelector('button').focus();
     },
