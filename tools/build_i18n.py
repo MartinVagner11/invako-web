@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 # Text that stays the same in every language (names, numbers, contact details).
 KEEP = {
     'INVAKO', '©', '/', '01', '02', '03', '04', '13', '500+', 'PVC', 'MDF', 'E-mail', 'Web',
-    'Google Maps', 'Apple Maps', 'Waze', '+420 775 565 671', 'franzova.hana@invako.cz',
+    'Google Maps', 'Apple Maps', 'Waze', '+420 775 565 674', 'info@invako.cz',
     'Podnásepní 450/1a', 'Trnitá, 602 00 Brno', '01783564', 'CZ01783564',
     'Street View – Podnásepní 450/1a, Brno', 'CZ', 'EN', 'DE', 'PL',
     'Čeština', 'English', 'Deutsch', 'Polski',
