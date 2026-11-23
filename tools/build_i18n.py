@@ -22,7 +22,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 KEEP = {
     'INVAKO', '©', '/', '01', '02', '03', '04', '13', '500+', 'PVC', 'MDF', 'E-mail', 'Web',
     'Google Maps', 'Apple Maps', 'Waze', '+420 775 565 674', 'info@invako.cz',
-    'Podnásepní 450/1a', 'Trnitá, 602 00 Brno', '01783564', 'CZ01783564',
+    'Podnásepní 450/1a', 'Trnitá, 602 00 Brno', 'INVAKO servis s.r.o.', '01783564', 'CZ01783564',
     'Street View – Podnásepní 450/1a, Brno', 'CZ', 'EN', 'DE', 'PL',
     'Čeština', 'English', 'Deutsch', 'Polski',
     'CZ +420', 'SK +421', 'DE +49', 'AT +43', 'PL +48', 'HU +36', 'GB +44',
