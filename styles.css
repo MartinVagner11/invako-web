@@ -460,6 +460,6 @@ a.card--link:hover, a.tile:hover, a.card--link:focus-visible, a.tile:focus-visib
 .form__note a { color: var(--navy); font-weight: 600; }
 
 /* Patička: údaje o firmě */
-.footer__company { padding: 28px 0 20px; border-bottom: 1px solid rgba(255,255,255,.08); line-height: 1.6; }
+.footer__company { padding: 18px 0 24px; border-top: 1px solid rgba(255,255,255,.08); line-height: 1.6; }
 .footer .footer__company p { margin: 0; }
 .footer .footer__company .footer__company-name { color: var(--white); font-weight: 700; margin-bottom: 4px; }
